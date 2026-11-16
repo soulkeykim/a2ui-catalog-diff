@@ -1,0 +1,62 @@
+{
+  "a2uiRendererCapabilities": {
+    "1.0": {
+      "supportedCatalogIds": [],
+      "inlineCatalogs": [
+        {
+          "protocolVersion": "1.0",
+          "catalogId": "https://example.test/catalog",
+          "components": {
+            "Button": {
+              "type": "object",
+              "allOf": [
+                {
+                  "$ref": "https://example.test/common.json#/$defs/Checkable"
+                }
+              ],
+              "properties": {
+                "component": {
+                  "const": "Button"
+                },
+                "child": {
+                  "type": "string"
+                },
+                "action": {
+                  "type": "object"
+                },
+                "label": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "component"
+              ]
+            }
+          },
+          "functions": {
+            "formatLabel": {
+              "type": "object",
+              "properties": {
+                "@call": {
+                  "const": "formatLabel"
+                },
+                "args": {
+                  "type": "object",
+                  "properties": {
+                    "label": {
+                      "type": "string"
+                    }
+                  }
+                }
+              },
+              "required": [
+                "@call"
+              ],
+              "returnType": "string"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
